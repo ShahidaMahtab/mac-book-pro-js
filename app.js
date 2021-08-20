@@ -34,6 +34,7 @@ function updatetotalPrice(){
  const deliveryPrice = document.getElementById("delivery-cost").innerText;
  const totalCost = parseInt(memoryPrice) + parseInt(storagePrice) + parseInt(deliveryPrice) + parseInt(bestPrice);
  document.getElementById('total-cost').innerText = totalCost ;
+ document.getElementById('total-discount').innerText = totalCost;
 }
 //updating memory
 document.getElementById('btn-eightGb').addEventListener('click',function(){
@@ -74,6 +75,8 @@ document.getElementById("btn-apply").addEventListener("click", function () {
   const totalPrice = parseInt(totalCost);
   if(promoInputField.value == 'stevekaku'){
    totalDiscount.innerText = totalPrice * (0.8);
+  }else{
+   totalDiscount.innerText = totalPrice;
   }
   promoInputField.value ="";
 });
